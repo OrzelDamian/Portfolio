@@ -1,17 +1,7 @@
 @font-face {
-    font-family: 'comic-sans-ms-italic';
+    font-family: 'montserrat-bold';
     src: 
-        url(./src/font/comic-sans-ms-italic-font/comici.ttf) format('truetype');
-}
-@font-face {
-    font-family: 'segoe-ui';
-    src: 
-        url(./src/font/SegoeUI-Bold.ttf) format('truetype');
-}
-@font-face {
-    font-family: 'segoe-ui-light';
-    src: 
-        url(./src/font/segoe-ui-light/segoe-ui-light.ttf) format('truetype');
+        url(./src/font/Montserrat-Bold.ttf) format('truetype');
 }
 
 *{
@@ -52,7 +42,8 @@ section{
     text-align: center;
 }
 .main-button{
-    font-family: "segoe-ui";
+    font-family: 'Open Sans';
+    font-weight: bold;
     background-color: #ebf604;
     border: none;
 }
@@ -61,15 +52,17 @@ section{
     color: black;
 }
 .section-header{
-    font-family: 'comic-sans-ms-italic';
+    font-family: 'montserrat-bold';
 }
 .about-me-description{
-    font-family: 'segoe-ui-light';
+    font-family: 'Open Sans';
+    font-weight: lighter;
     text-align: center;
 }
 .section-part-header{
     display: inline;
-    font-family: "segoe-ui";
+    font-family: 'Open Sans';
+    font-weight: bold;
     position: relative;
     align-self: flex-start;
     left: 50%;
@@ -113,7 +106,8 @@ section{
     transform: translate(-50%);
     flex-direction: column;
     align-self: flex-start;
-    font-family: "segoe-ui";
+    font-family: 'Open Sans';
+    font-weight: bold;
 }
 
 .skills-list-languages li, .skills-list-skills li{
@@ -131,7 +125,8 @@ section{
     position: relative;
 }
 .type-project p{
-    font-family: 'segoe-ui';
+    font-family: 'Open Sans';
+    font-weight: bold;
 }
 
 @media (min-width: 344px)
@@ -250,7 +245,7 @@ and (max-width:345px){
         flex-direction: column;
         align-items: center;
         list-style: none;
-        font-family: 'comic-sans-ms-italic';
+        font-family: 'montserrat-bold';
         font-size: 1.3rem;
         margin-top: 6rem;
         position: relative;
