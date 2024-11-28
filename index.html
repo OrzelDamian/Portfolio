@@ -10,7 +10,7 @@
 <body>
     <div class="wrapper" id="wrapper">
         <header class="header" id="header">
-            <div class="header-element">
+            <div id="header-element" class="header-element">
                 <div class="hamburger-menu" id="hamburger-menu">
                     <div class="hambureger-menu-part" id="hambureger-menu-part"></div>
                     <div class="hambureger-menu-part" id="hambureger-menu-part"></div>
@@ -66,10 +66,10 @@
                 <div class="tools" id="tools">
                     <h2 class="section-part-header my-skills-header">NARZĘDZIA</h2>
                     <div class="tools-img">
-                        <img src="./src/ps.png" alt="Photoshop">
-                        <img src="./src/figma.png" alt="Figma">
-                        <img src="./src/html.png" alt="HTML">
-                        <img src="./src/css.png" alt="CSS">
+                        <img src="./src/skills-image/ps.png" alt="Photoshop">
+                        <img src="./src/skills-image/figma.png" alt="Figma">
+                        <img src="./src/skills-image/figma.png" alt="HTML">
+                        <img src="./src/skills-image/css.png" alt="CSS">
                     </div>
                 </div>
             </div>
@@ -82,52 +82,88 @@
                 <div class="logos" id="logos">
                     <h2 class="section-part-header type-project-header" id="type-project-header">LOGOTYPY</h2>
                     <ul class="logos-list" id="logos-list">
-                        <li><div class="logo-and-description">
-                            <img class="logo-gym" src="./src/logotypy/logo siłownia.jpg"  alt="Przykładowe logo dla siłowni">
-                        <p class="projectname" id="projectname">Przykładowe logo dla siłowni</p>
-                        </div>    
-                    </li> 
-                        <li><div class="logo-and-description"><img class="logo-cafe" src="./src/logotypy/logo kawiarnia.jpg" alt="Przykładowe logo dla kawiarni">
-                        <p class="projectname" id="projectname">Przykładowe logo dla kawiarni</p></div></li>
-                        <li><div class="logo-and-description"><img class="logo-dog" src="./src/logotypy/Logo schronisko.png" alt="Przykładowe logo dla schroniska">
-                        <p class="projectname" id="projectname">Przykładowe logo dla schroniska</p></div></li>
-                        <li ><div class="logo-and-description"><img class="logo-pizzeria" src="./src/logotypy/logo pizzeria jpg.jpg" alt="Przykładowe logo dla pizzeri">
-                        <p class="projectname" id="projectname">Przykładowe logo dla pizzeri</p></div></li>
+                        <li>
+                            <div class="logo-and-description">
+                            <picture>
+                                <source media="(max-width: 500px)" srcset="./src/logotypy/logo-small/logo-gym-small.png" />
+                                <source media="(max-width: 1100px)" srcset="./src/logotypy/logo-medium/logo-gym-medium.png" />
+                                <source media="(max-width: 1400px)" srcset="./src/logotypy/logo-large/logo-gym-large.png" />
+                                <img class="logo-dog" src="./src/logotypy/logo-x-large/logo-gym-x-large.png" alt="Przykładowe logo dla schroniska">
+                            </picture>  
+                            <p class="projectname" id="projectname">Przykładowe logo dla siłowni</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="logo-and-description">
+                            <picture>
+                                <source media="(max-width: 500px)" srcset="./src/logotypy/logo-small/logo-cafe-small.png" />
+                                <source media="(max-width: 1100px)" srcset="./src/logotypy/logo-medium/logo-cafe-medium.png" />
+                                <source media="(max-width: 1400px)" srcset="./src/logotypy/logo-large/logo-cafe-large.png" />
+                                <img class="logo-dog" src="./src/logotypy/logo-x-large/logo-cafe-x-large.png" alt="Przykładowe logo dla schroniska">
+                            </picture>
+                            <p class="projectname" id="projectname">Przykładowe logo dla kawiarni</p>
+                        </div>
+                        </li>
+                        <li>
+                            <div class="logo-and-description">
+                                <picture>
+                                    <source media="(max-width: 500px)" srcset="./src/logotypy/logo-small/logo-dog-small.png"/>
+                                    <source media="(max-width: 1100px)" srcset="./src/logotypy/logo-medium/logo-dog-medium.png"/>
+                                    <source media="(max-width: 1400px)" srcset="./src/logotypy/logo-large/logo-dog-large.png"/>
+                                    <img class="logo-dog" src="./src/logotypy/logo-x-large/logo-dog-x-large.png" alt="Przykładowe logo dla schroniska">
+                                </picture>
+                                
+                                <p class="projectname" id="projectname">Przykładowe logo dla schroniska</p>
+                        </div>
+                        </li>
+                        <li>
+                            <div class="logo-and-description">
+                                <picture>
+                                    <source media="(max-width: 500px)" srcset="./src/logotypy/logo-small/logo-pizzeria-small.png" />
+                                    <source media="(max-width: 1100px)" srcset="./src/logotypy/logo-medium/logo-pizzeria-medium.png" />
+                                    <source media="(max-width: 1400px)" srcset="./src/logotypy/logo-large/logo-pizzeria-large.png" />
+                                    <img class="logo-dog" src="./src/logotypy/logo-x-large/logo-pizzeria-x-large.png" alt="Przykładowe logo dla schroniska">
+                                </picture>
+                                <p class="projectname" id="projectname">Przykładowe logo dla pizzeri</p>
+                            </div>
+                        </li>
                     </ul>
+                
                 </div>
                 <div class="social-media-ads" id="social-media-ads">
                     <h2 class="section-part-header type-project-header" id="type-project-header">REKLAMY POD SOCIAL MEDIA</h2>
                     <ul class="social-media-ads-1920-1080" id="social-media-ads-1920-1080">
-                        <li><div class="social-media-ads-1920-1080-and-description"><img src="./src/Pizzeria ig stories.png" alt="przykładowa reklama 1920x1080 pizzeria">
+                        <li><div class="social-media-ads-1920-1080-and-description"><img src="./src/social-media-ads/1920x1080/ig-ads-pizzeria.jpg" alt="przykładowa reklama 1920x1080 pizzeria">
                         <p class="projectname" id="projectname">przykładowa reklama 1920x1080 pizzeria</p></div></li>
-                        <li><div class="social-media-ads-1920-1080-and-description"><img src="./src/Kawiarnia ig stories.png" alt="przykładowa reklama 1920x1080 kawiarnia">
+                        <li><div class="social-media-ads-1920-1080-and-description"><img src="./src/social-media-ads/1920x1080/ig-ads-cafe.jpg" alt="przykładowa reklama 1920x1080 kawiarnia">
                         <p class="projectname" id="projectname">przykładowa reklama 1920x1080 kawiarnia</p></div></li>
-                        <li><div class="social-media-ads-1920-1080-and-description"><img src="./src/Siłownia ig stories.png" alt="przykładowa reklama 1920x1080 siłownia">
+                        <li><div class="social-media-ads-1920-1080-and-description"><img src="./src/social-media-ads/1920x1080/ig-ads-gym.jpg" alt="przykładowa reklama 1920x1080 siłownia">
                         <p class="projectname" id="projectname">przykładowa reklama 1920x1080 siłownia</p></div></li>
                     </ul>
                     <ul class="social-media-ads-1080-1080" id="social-media-ads-1080-1080">
-                        <li><div class="social-media-ads-1080-1080-and-description"><img src="./src/Pizzeria fb ads.png" alt="przykładowa reklama 1080x1080 pizzeria">
+                        <li><div class="social-media-ads-1080-1080-and-description"><img src="./src/social-media-ads/1080x-1080x/fb-ads-pizzeria.jpg" alt="przykładowa reklama 1080x1080 pizzeria">
                         <p class="projectname" id="projectname">przykładowa reklama 1080x1080 pizzeria</p></div></li>
-                        <li><div class="social-media-ads-1080-1080-and-description"><img src="./src/Kawiarnia fb ads.png" alt="przykładowa reklama 1080x1080 kawiarnia">
+                        <li><div class="social-media-ads-1080-1080-and-description"><img src="./src/social-media-ads/1080x-1080x/fb-ads-cafe.jpg" alt="przykładowa reklama 1080x1080 kawiarnia">
                         <p class="projectname" id="projectname">przykładowa reklama 1080x1080 kawiarnia</p></div></li>
-                        <li><div class="social-media-ads-1080-1080-and-description"><img src="./src/Siłownia fb ads.png" alt="przykładowa reklama 1080x1080 siłownia">
+                        <li><div class="social-media-ads-1080-1080-and-description"><img src="./src/social-media-ads/1080x-1080x/fb-ads-gym.jpg" alt="przykładowa reklama 1080x1080 siłownia">
                         <p class="projectname" id="projectname">przykładowa reklama 1080x1080 siłownia</p></div></li>
                     </ul>
                 </div>
                 <div class="business-cards" id="business-cards">
                     <h2 class="section-part-header type-project-header" id="type-project-header">WIZYTÓWKI</h2>
                     <ul class="business-cards-list" id="business-cards-list">
-                        <li><div class="business-cards-and-description"><img src="./src/Wizytówka kawiarnia front.png" alt=""><img src="./src/Wizytówka kawiarnia reverse.png" alt="">
+                        <li><div class="business-cards-and-description"><img src="./src/business-cards/business-cards-cafe-front.jpg" alt=""><img src="./src/business-cards/business-cards-cafe-reverse.jpg" alt="">
                         <p class="projectname" id="projectname">Przykładowa wizytówka kawiarni</p></div></li>
-                        <li><div class="business-cards-and-description"><img src="./src/Wizytówka Elect gym front.png" alt=""><img src="./src/Wizytówka siłownia reverse.png" alt="">
+                        <li><div class="business-cards-and-description"><img src="./src/business-cards/business-cards-gym-front.jpg" alt=""><img src="./src/business-cards/business-cards-gym-reverse.jpg" alt="">
                         <p class="projectname" id="projectname">Przykładowa wizytówka siłowni</p></div></li>
                     </ul>
                 </div>
                 <div class="retouch" id="retouch">
                     <h2 class="section-part-header type-project-header" id="type-project-header">RETUSZ</h2>
                     <ul class="retouch-list" id="retouch-list">
-                        <li><img src="./src/Retusz twarzy przed.png" alt="">
-                            <img src="./src/Retusz twarzy po.png" alt="">
+                        <li><img src="./src/retouch/Retusz twarzy przed.png" alt="">
+                            <img src="./src/retouch/Retusz twarzy po.png" alt="">
                         <p class="projectname" id="projectname">Przykładowy retusz twarzy</p></li>
                     </ul>
                 </div>
@@ -137,10 +173,10 @@
         <section class="contact" id="contact">
             <h1 class="section-header" id="section-header">KONTAKT</h1>
             <ul class="contact-list" id="contact-list">
-                <li class="phone" id="phone"><img src="./src/phone.png" alt="Phone"></li>
-                <li class="email" id="email"><img src="./src/email.png" alt="Email"></li>
-                <li class="fb" id="fb"><a href="https://www.facebook.com/profile.php?id=100003819816168" target="_blank"><img src="./src/fb.png" alt="Facebook"></a></li>
-                <li class="ig" id="ig"><a href="https://www.instagram.com/damian.orzel" target="_blank"><img src="./src/ig.png" alt="Instagtam"></a></li>
+                <li class="phone" id="phone"><img src="./src/contact-icon/phone.png" alt="Phone"></li>
+                <li class="email" id="email"><img src="./src/contact-icon/email.png" alt="Email"></li>
+                <li class="fb" id="fb"><a href="https://www.facebook.com/profile.php?id=100003819816168" target="_blank"><img src="./src/contact-icon/fb.png" alt="Facebook"></a></li>
+                <li class="ig" id="ig"><a href="https://www.instagram.com/damian.orzel" target="_blank"><img src="./src/contact-icon/ig.png" alt="Instagtam"></a></li>
             </ul>
             <img class="logo-elipse-img" id="logo-elipse-img" src="./src/Logo.png" alt="">
         </section> 
