@@ -1,3 +1,7 @@
+
+
+
+
 const hamburger = document.querySelector("#hamburger-menu");
 const menu = document.querySelector("#menu");
 
@@ -5,12 +9,28 @@ const menuElements = document.querySelectorAll("#menu li a");
 
 let arrayIndex;
 
+
+
+
 const slider = (arrow)=>{
 
     
+    
     if(arrow.innerHTML === "&lt;"){
         
-        arrayIndex+=1;
+            arrayIndex = arrayIndex -1;
+            if(arrayIndex<0){
+                arrayIndex = portfolioImages.length-1;
+                sliderImg.setAttribute("src", portfolioImages[arrayIndex].getAttribute("src"))
+            }
+            else{
+        
+                sliderImg.setAttribute("src", portfolioImages[arrayIndex].getAttribute("src"))
+            }
+        }
+        else{
+
+        arrayIndex = arrayIndex +1;
         if(arrayIndex > portfolioImages.length-1){
             arrayIndex = 0;
 
@@ -19,18 +39,7 @@ const slider = (arrow)=>{
         else{
             sliderImg.setAttribute("src", portfolioImages[arrayIndex].getAttribute("src"))
         }
-        }
-        else{
-
-        arrayIndex = arrayIndex -1;
-        if(arrayIndex<0){
-            arrayIndex = portfolioImages.length-1;
-            sliderImg.setAttribute("src", portfolioImages[arrayIndex].getAttribute("src"))
-        }
-        else{
         
-            sliderImg.setAttribute("src", portfolioImages[arrayIndex].getAttribute("src"))
-        }
     }
 }
 
@@ -124,7 +133,9 @@ const leftArrow = document.createElement("div");
 const rightArrow = document.createElement("div");
 const closeSlider = document.createElement("div");
 
- 
+let slideImageUrl; 
+
+const imagesSrc = [...portfolioImages].map(src=>src.getAttribute("src"));
 
 leftArrow.classList.add("arrow-button", "arrow-left");
 rightArrow.classList.add("arrow-button", "arrow-right");
@@ -137,13 +148,6 @@ closeSlider.innerHTML = "X";
 
 
 
-const wrapper = document.querySelector("#wrapper");
-
-let portfolioImageApply = false;
-
-
-const imagesSrc = [...portfolioImages].map(src=>src.getAttribute("src"));
-
 
 portfolioImages.forEach((e)=>{
 
@@ -151,7 +155,12 @@ portfolioImages.forEach((e)=>{
     e.addEventListener("click",()=>{
  
             htmlE.style.overflowY = 'hidden';
-            sliderImg.setAttribute("src", e.getAttribute("src"));
+
+
+            if(window.screen.width>320){
+                sliderImg.setAttribute("src", e.getAttribute("src"));
+            }
+            
             sliderImg.setAttribute("alt", e.getAttribute("alt"));
 
             arrayIndex = imagesSrc.indexOf(`${e.getAttribute("src")}`)
