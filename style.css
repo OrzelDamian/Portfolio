@@ -60,16 +60,17 @@ section{
     text-align: center;
 }
 .section-part-header{
-    display: inline;
+    display: block;
     font-family: 'Open Sans';
     font-weight: bold;
     position: relative;
     align-self: flex-start;
     left: 50%;
     transform: translate(-50%);
-    
 }
-
+.logos-header {
+    width: fit-content;
+}
 .section-part-header::after{
     content: "";
     display: block;
@@ -356,6 +357,8 @@ and (max-width:345px){
         font-size: .7rem;
         padding: 0 .3rem 0.1rem .3rem;
         margin-bottom: .5rem;
+        text-align: center;
+        
     }
     .tools .my-skills-header{
         margin-bottom: 1rem;
@@ -389,10 +392,9 @@ and (max-width:345px){
     .type-project-header{
         margin-bottom: 1.5rem;
         font-size: .7rem;
+        display: block;
     }
-    .logos-list li img{
-        /* width: 14rem; */
-    }
+    
     .projectname{
         padding: .1rem 0 2rem 0;
         font-size: 0.6rem;    
