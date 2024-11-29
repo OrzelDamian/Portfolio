@@ -120,7 +120,6 @@ section{
 .portfolio ul{
     list-style: none;
 }
-cd 
 .logos, .social-media-ads, .business-cards, .retouch{
     display: flex;
     position: relative;
@@ -129,48 +128,56 @@ cd
     font-family: 'Open Sans';
     font-weight: bold;
 }
-.portfolio ul li 
-:hover{
-    transform: scale(1.02);
-    transition: all .2s ease-in-out
+
+
+.portfolio ul li{
+    transition: transform .3s ease;
 }
+.portfolio ul li:hover {
+    transform: scale(1.04);
+    cursor: pointer;
+}
+
+
 .slider-div{
     display: flex;
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    left: 0;
+    transform: translateY(-50%);
     width: 100vw;
     height: 100vh;
     border: 2px solid black;
     z-index: 3;
     background-color: white;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid black;
     justify-content: center;
     align-items: center;
-    background: rgba(0, 0, 0, 0.7)
 }
 
 .bg-slider-image{
     display: flex;
     position: relative;
-    width: 50vw;
-    height: 80vh;
-    z-index: 3;
+    width: 80vw;
+    height: 90vh;
+    z-index: 4;
     background-color: white;
     justify-content: center;
     align-items: center;
-    margin: 0 1rem 0 1rem;
+    left: 1rem;
+    
 }
 .slider-img{
     display: flex;
     position: relative;
     top: 50%;
     transform: translateY(-50%);
-    width: 30%;
     z-index: 4;
     align-self: flex-start;
     background-color: rgba(255,255,255, 1);
 }
-.arrow{
+.arrow-button{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -180,13 +187,34 @@ cd
     background-color: black;
     color: white;
     border-radius: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    left: 1rem;
+}
+.arrow-left{
+    transform: translateX(-20%);
+}
+ .arrow-right{
+    transform: translateX(20%);
+}
+.close-button{
+    align-self: flex-start;
+    transform: translateX(-80%);
 }
 
+.arrow-button:hover{
+    cursor: pointer;
+}
+
+@media (min-width: 320px), screen{
+    .slider-img{
+        width: 90%;
+    }
+}
 @media (min-width: 344px)
 and (max-width:345px){
     .wrapper{
         flex-direction: column;
-        background-image: url('./src/background.png');
+        background-image: url('./src/background/background.png');
         background-size: 100% 100%;
         background-position-y: -5%;
     }
@@ -197,7 +225,6 @@ and (max-width:345px){
     section.home{
         padding: 9rem 0 13rem 0;
     }
-    
 }
 
 @media (min-width: 360px), screen{
@@ -576,7 +603,7 @@ and (-webkit-min-device-pixel-ratio: 2)
         font-size: 10px;
     }
     .wrapper{
-        background-image: url('./src/desctop-portfolio.png');
+        background-image: url('./src/background/desctop-portfolio.png');
         background-size: 100% 90%
         
     }
@@ -733,6 +760,11 @@ and (-webkit-min-device-pixel-ratio: 2)
         margin-left: 2rem;
         margin-right: 2rem;
     }
+
+    .slider-img{
+        height: 90%;
+        width: fit-content;
+    }
 }
 
 @media (min-width: 720px) 
@@ -800,6 +832,10 @@ and (-webkit-min-device-pixel-ratio: 2)
         padding-top: 2rem;
     }
 }
+@media (min-width: 720px) and (orientation:landscape) 
+{
+    .slider-img{ width: 25%; height: fit-content; }
+}
 @media (min-width: 740px) 
 {
     .contact{
@@ -866,9 +902,7 @@ and (-webkit-min-device-pixel-ratio: 2)
     padding-right: 3rem;
     margin-bottom: 3rem;
 }
-.logos-list li img{
-    /* height: 12rem; */
-}
+
 .my-skills li{
     font-size: .75rem;
 }
@@ -882,6 +916,7 @@ and (-webkit-min-device-pixel-ratio: 2)
 .tools{
     margin-bottom: 5rem;
 }
+
 .social-media-ads-1920-1080 img{
     width: 24rem;
 
@@ -907,6 +942,11 @@ and (-webkit-min-device-pixel-ratio: 2)
 }
 }
 
+
+@media (min-width: 768px) and (orientation:portrait) 
+{
+    .slider-img{ width: 80%; height: fit-content; }
+}
 
 
 @media (min-width: 820px) 
@@ -998,6 +1038,11 @@ and (-webkit-min-device-pixel-ratio: 2)
 }
 
 
+@media (min-width: 1024px) and (orientation: landscape)
+{
+    .slider-img{ width: fit-content; height: 50% }
+}
+
 @media (min-width: 1180px) 
 {
     html{
@@ -1071,14 +1116,10 @@ and (-webkit-min-device-pixel-ratio: 2)
         padding-right: 7rem;
     }
     .social-media-ads-1080-1080 img{
-        width: 36rem;
+        /* width: 36rem; */
     }
     .business-cards img{
         width: 30rem;
-    }
-    .logo img{
-        top: 2rem;
-        right:  8rem;
     }
     .logo img{
         top: 2rem;

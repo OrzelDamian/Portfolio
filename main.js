@@ -3,7 +3,36 @@ const menu = document.querySelector("#menu");
 
 const menuElements = document.querySelectorAll("#menu li a");
 
+let arrayIndex;
 
+const slider = (arrow)=>{
+
+    
+    if(arrow.innerHTML === "&lt;"){
+        
+        arrayIndex+=1;
+        if(arrayIndex > portfolioImages.length-1){
+            arrayIndex = 0;
+
+            sliderImg.setAttribute("src", portfolioImages[arrayIndex].getAttribute("src"))
+        }
+        else{
+            sliderImg.setAttribute("src", portfolioImages[arrayIndex].getAttribute("src"))
+        }
+        }
+        else{
+
+        arrayIndex = arrayIndex -1;
+        if(arrayIndex<0){
+            arrayIndex = portfolioImages.length-1;
+            sliderImg.setAttribute("src", portfolioImages[arrayIndex].getAttribute("src"))
+        }
+        else{
+        
+            sliderImg.setAttribute("src", portfolioImages[arrayIndex].getAttribute("src"))
+        }
+    }
+}
 
 
 
@@ -76,11 +105,12 @@ email.addEventListener('click', ()=>{
 const portfolioImages = document.querySelectorAll(".portfolio img");
 const portfolioSection = document.querySelector("#portfolio");
 
-console.log(portfolioSection);
 
-let sliderImg = document.createElement("img");
-let containerSlaider = document.createElement("div");
-let backgroundSlaiderImg = document.createElement("div");
+const sliderImg = document.createElement("img");
+const backgroundSlaiderImg = document.createElement("div");
+const containerSlaider = document.createElement("div");
+
+
 
 const htmlE = document.querySelector("html");
 
@@ -92,16 +122,19 @@ let windowSemiPosition;
 
 const leftArrow = document.createElement("div");
 const rightArrow = document.createElement("div");
+const closeSlider = document.createElement("div");
 
  
 
-leftArrow.classList.add("arrow", "left-arrow");
-rightArrow.classList.add("arrow", "right-arrow");
+leftArrow.classList.add("arrow-button", "arrow-left");
+rightArrow.classList.add("arrow-button", "arrow-right");
+closeSlider.classList.add("arrow-button", "close-button");
 
 leftArrow.innerHTML = "<";
 rightArrow.innerHTML = ">";
+closeSlider.innerHTML = "X";
 
-let arrayIndex;
+
 
 
 const wrapper = document.querySelector("#wrapper");
@@ -134,6 +167,8 @@ portfolioImages.forEach((e)=>{
             containerSlaider.appendChild(backgroundSlaiderImg);
             containerSlaider.appendChild(rightArrow);
 
+            containerSlaider.appendChild(closeSlider);
+
 
             imgEelementShift = window.scrollY - portfolioSection.offsetTop;
 
@@ -142,56 +177,39 @@ portfolioImages.forEach((e)=>{
             windowSemiPosition = (windowPositionBottom - window.scrollY)/2;
             
             portfolioSection.appendChild(containerSlaider);
-            
             containerSlaider.style.top = `${imgEelementShift + windowSemiPosition}px`;
-
-            
-
 
     })
 })
 
 rightArrow.addEventListener("click", (e)=>{
     e.stopPropagation();
-    console.log(portfolioImages.length);
-    arrayIndex+=1;
-    if(arrayIndex > portfolioImages.length-1){
-        arrayIndex = 0;
-        console.log(arrayIndex);
-        sliderImg.setAttribute("src", portfolioImages[arrayIndex].getAttribute("src"))
-    }
-    else{
-        console.log(arrayIndex);
-        sliderImg.setAttribute("src", portfolioImages[arrayIndex].getAttribute("src"))
-    }
-    
-
+    slider(e.target);
 })
 
 
 leftArrow.addEventListener("click", (e)=>{
     e.stopPropagation();
-    arrayIndex = arrayIndex -1;
-    if(arrayIndex<0){
-        arrayIndex = portfolioImages.length-1;
-        sliderImg.setAttribute("src", portfolioImages[arrayIndex].getAttribute("src"))
-        console.log(arrayIndex);
-    }
-    else{
-        console.log(arrayIndex);
-        sliderImg.setAttribute("src", portfolioImages[arrayIndex].getAttribute("src"))
-    }
-        
+    slider(e.target);    
 })
+
+backgroundSlaiderImg.addEventListener("click", (e)=>{
+    e.stopPropagation();
+    slider(e.target);    
+})
+
+
 
 containerSlaider.addEventListener("click", ()=>{
         htmlE.style.overflowY = 'visible';
         portfolioSection.removeChild(containerSlaider);
 });
 
+backgroundSlaiderImg.addEventListener("click", (e)=>{
+    e.stopPropagation();
+})
 
 
-console.log(sliderImg.getAttribute("src"));
 
 window.onload = ()=>{
         document.querySelector('#home').scrollIntoView();
